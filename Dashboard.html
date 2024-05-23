@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            height: 50px;
+            width: 45px;
+        }
+        
+        header {
+            background-color:whitesmoke ;
+            color: #fff;
+            padding: 10px ;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        /* styles.css */
+        .signout-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+button:hover {
+    background-color: #d32f2f;
+}
+
+        
+
+        nav {
+            background-color:  lightpink;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Change to your preferred hover color */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-section,
+        .video-section,
+        .images-section,
+        .suggestion-section {
+            margin: 20px auto;
+            padding: 30px 60px 30px 60px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #35424a;
+        }
+
+        p {
+            font-size: 16px;
+            color: #35424a;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            resize: vertical;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s pink ;
+        }
+
+        button:hover {
+            background-color: #35424a; /* Change to your preferred hover color */
+        }
+    </style>
+</head>
+<body>
+    <img src="smart logo.jpg" alt="Logo" class="logo" >
+    <a href="auth.html">
+        <button class="signout-btn">Sign Out</button>
+        </a>
+    
+    <header>
+        <h1 >Welcome to the Dashboard of Smart Irrigation </h1>
+    </header>
+    
+
+    <nav>
+        <a href="#" onclick="showProfile()">Profile</a>
+        <a href="#" onclick="showVideo()">Drone Live Streaming</a>
+        <a href="#" onclick="showImages()">Drone Captured Images</a>
+        <a href="#" onclick="showSuggestions()">Drone Suggestions</a>
+    </nav>
+
+    <div class="container">
+        <div class="profile-section" id="profile">
+            <h1>Your Profile</h1>
+            <p>Welcome to your profile section! Here you can manage your drone projects and explore exciting features.</p>
+        </div>
+
+        <div class="video-section" id="video">
+            <h1 Style="font-style: italic;">Drone Live Streaming </h1>
+            <div class="video-container">
+                <iframe  width="560" height="315" src="https://www.youtube.com/embed/WeDvNscRRPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+            </div>
+        </div>
+
+        <div class="images-section" id="images">
+            <h1 href="https://detect.roboflow.com/?model=ground-nut-diseased-detection&version=1&api_key=hoZY3Do8kwVh7xF3WXng">Drone Captured Images</h1>
+            <img src="drone1.jpeg" alt="Drone Image 1">
+            <img src="drone2.jpeg" alt="Drone Image 2">
+            <img src="drone3.jpeg" alt="Drone Image 3">
+        </div>
+
+        <div class="suggestion-section" id="suggestions">
+            <h1 style="font-size: 50px; font-style: italic;text-align: center;">Drone Suggestions</h1>
+            <label for="audioSuggestion">Smart Irrigation  Suggestion:</label>
+            <textarea id="audioSuggestion" name="audioSuggestion" rows="4" cols="50"></textarea><br>
+            <label for="textSuggestion">Farmer Text Suggestion:</label>
+            <textarea id="textSuggestion" name="textSuggestion" rows="4" cols="50"></textarea><br>
+            <button onclick="submitSuggestions()">Submit Suggestions</button>
+        </div>
+    </div>
+
+    <script>
+        function showProfile() {
+            hideAllSections();
+            document.getElementById('profile').style.display = 'block';
+        }
+
+        function showVideo() {
+            hideAllSections();
+            document.getElementById('video').style.display = 'block';
+        }
+
+        function showImages() {// Clear any existing content in the images section
+            document.getElementById('images').innerHTML = '';
+
+    // Create a new iframe element
+            var iframe = document.createElement('iframe');
+    
+    // Set the source URL of the iframe
+            iframe.src = "https://detect.roboflow.com/?model=ground-nut-diseased-detection&version=1&api_key=";
+    
+    // Set the width and height of the iframe
+            iframe.style.width = "500";
+            iframe.style.height = "300"; // Set your desired height
+    
+    // Set border to none to remove iframe border
+            iframe.style.border = "none";
+
+    // Append the iframe to the images section
+            document.getElementById('images').appendChild(iframe);
+            
+
+            
+        }
+
+        function showSuggestions() {
+            hideAllSections();
+            document.getElementById('suggestions').style.display = 'block';
+        }
+
+        function hideAllSections() {
+            const sections = document.querySelectorAll('.profile-section, .video-section, .images-section, .suggestion-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+        }
+
+        function submitSuggestions() {
+            const audioSuggestion = document.getElementById('audioSuggestion').value;
+            const textSuggestion = document.getElementById('textSuggestion').value;
+
+            // Here you can handle the submission of suggestions, for example, sending them to a server
+            console.log('Audio Suggestion:', audioSuggestion);
+            console.log('Text Suggestion:', textSuggestion);
+
+            // Clear input fields after submission
+            document.getElementById('audioSuggestion').value = '';
+            document.getElementById('textSuggestion').value = '';
+
+            alert('Suggestions submitted successfully!');
+        }
+    </script>
+</body>
+</html>
