@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        .signup-message {
+            margin-top: 10px;
+            text-align: center;
+            color: #555;
+        }
+
+        .signup-message a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        .signup-message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form class="login-form">
+        <h2>Login</h2>
+        <div class="form-group email-section">
+            <label for="email">Email</label>
+            <input type="email" id="login_email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group password-section">
+            <label for="password">Password</label>
+            <input type="password" id="login_password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="button"   name="login" id="login" class="login-button">Login</button>
+        <div class="signup-message">
+            Don't have an account? <a href="signup.html">Create a new one</a>
+        </div>
+    </form>
+</body>
+</html>

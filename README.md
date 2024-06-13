@@ -2,4 +2,4 @@
 <br>
 my name is shiak allabaksh 
 <br>
-<Lorem>
+some changes in the text messages in the files 
